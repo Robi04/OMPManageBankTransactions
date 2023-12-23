@@ -15,11 +15,10 @@ main_seq.cpp : same program but in sequential
 
 
 # Results 
-# TD Noté
 
-### Vérificaiton résultat + Découverte données
+### Discovery of the input data + Check/benchmarks of the outputs
 
-Utilisation de python et pandas pour voir le nombre de lignes + Valeur min max et info statistique intéressantes:
+Did use python->pandas to explore the dataset and find the most import pieces of information (min,max,mean,number of rows...)
 
 |       | Source Account | Destination Account | Amount     | Signature     |
 | ----- | -------------- | ------------------- | ---------- | ------------- |
@@ -32,29 +31,29 @@ Utilisation de python et pandas pour voir le nombre de lignes + Valeur min max e
 | 75%   | 749.000000     | 750.000000          | 3449.70500 | -1.757232e+06 |
 | max   | 999.000000     | 999.000000          | 15566.1800 | 1.980400e+06  |
 
-### Parcours
+### What I achieved in 3 hours
 
-- Je n'avais pas eu le temps de finir mon plan de dév, j'ai donc commencé à développer mon programme en séquentiel.
+- First I tried to plan how I'd develop that on a piece of paper. I had the big ideas on how to do it but because of a lack of time I decided to develop and think about the conception at the same time (multi-threading work I guess).
 
-1. Lecture csv
-2. Traitement
-3. Affichage
-4. Transfo code seq en parra
+1. Read the CSV
+2. Processing and analysis
+3. Display of the result
+4. Translate from a sequential program to a multi-threading program (using omp)
 5. Benchmark
 
-### Benchmark :
+### Benchmarks :
 
 <img src="./benchParra.png"></img>
-Voici les résultats obtenu je pense qu'il y a un petit soucis de sync quelque part
-mais le code en séquentiel prenanit plusieurs minutes mais n'arrivait pas à terminus
+Here's the rsults i found. I think there might be a little problem with the sync somewhere. But I still have a really good accuracy
+We can also check the time it took, knowing that in sequential this took +5 minutes
 
-### Ce que je n'ai pas pu faire
+### What I couldn't do
 
-- std : Elle est présente mais foireuse
-- Médiane : pas faite du tout
-- Quartile : pas faite du tout
+- std : It's there but only physically
+- Median : No time to do it
+- Quartile : Same as median
 
-### Fichier présents :
+### Files : 
 
-main.cpp -> Programme qui tourne en parralèle
-main_seq.cpp -> Programme qui tourne en séquentiel
+main.cpp -> Use of Multi-Threading
+main_seq.cpp -> Basic sequential program
